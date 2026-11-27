@@ -1,10 +1,13 @@
 from fastapi import FastAPI
+from .resume_routes import router as resume_router
 
 app = FastAPI(
     title="CareerForge AI",
     description="AI-powered career development platform",
     version="0.1.0"
 )
+
+app.include_router(resume_router)
 
 
 @app.get("/")
